@@ -1,0 +1,19 @@
+# Ship only manifest.json, icon.png, package.json, server/ (code + data) and production node_modules.
+/INSTALL.md
+/*.md
+tests/
+.shim.mjs
+*.mcpb
+.env*
+*.log
+.DS_Store
+package-lock.json
+node_modules/.package-lock.json
+node_modules/**/*.map
+node_modules/**/*.d.ts
+node_modules/**/*.d.cts
+node_modules/**/*.d.mts
+scripts/
+/.gitignore
+/skills/
+/.github/

@@ -1,0 +1,120 @@
+{
+  "manifest_version": "0.4",
+  "name": "canvas-readonly",
+  "display_name": "Canvas (read-only)",
+  "version": "0.4.4",
+  "description": "Read-only access to your Canvas courses: assignments, due dates, course files, announcements, calendar, your To Do list, grades and your instructors' feedback. Never changes anything in Canvas.",
+  "long_description": "A local, read-only MCP server for Canvas LMS. It only sends GET requests with your own Canvas access token, which Claude Desktop stores in your computer's secure storage. The token is only ever sent to your Canvas site, never to the storage servers course files are downloaded from. Dates are shown in the time zone from your Canvas profile. It reads course files you can open (PDF, Word, PowerPoint, text) in memory without saving them. It never submits, posts, edits or deletes anything, never reads your inbox or discussion replies, and never returns other students' submissions, grades or comments; on your submissions it shows only comments from instructors and TAs.",
+  "author": {
+    "name": "ali-sg",
+    "url": "https://github.com/ali-sg"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ali-sg/canvas-assistant.git"
+  },
+  "homepage": "https://github.com/ali-sg/canvas-assistant",
+  "support": "https://github.com/ali-sg/canvas-assistant/issues",
+  "icon": "icon.png",
+  "server": {
+    "type": "node",
+    "entry_point": "server/index.js",
+    "mcp_config": {
+      "command": "node",
+      "args": [
+        "${__dirname}/server/index.js"
+      ],
+      "env": {
+        "CANVAS_API_TOKEN": "${user_config.canvas_token}",
+        "CANVAS_BASE_URL": "${user_config.canvas_base_url}"
+      }
+    }
+  },
+  "tools": [
+    {
+      "name": "list_courses",
+      "description": "Your active Canvas courses (id, name, code, term)."
+    },
+    {
+      "name": "course_details",
+      "description": "One course at a glance: assignments with your submission status, discussions, quizzes, pages (full text, from up to 2 MB of HTML each), modules, syllabus, announcements, and the course files they mention (with size and date). Can be limited to some sections or to key files; web links on request."
+    },
+    {
+      "name": "get_page",
+      "description": "One course page by its url slug, full text or deadline-keyword snippets."
+    },
+    {
+      "name": "upcoming_items",
+      "description": "Unsubmitted work due in the next N days, plus overdue, sorted by due date."
+    },
+    {
+      "name": "undated_items",
+      "description": "Work with no due date, mapped to its module week."
+    },
+    {
+      "name": "changed_items",
+      "description": "What is new, removed, changed, renamed or reopened since the last check. Saves the new check only if everything loaded."
+    },
+    {
+      "name": "list_announcements",
+      "description": "Course announcements with full text and posted date."
+    },
+    {
+      "name": "list_calendar_events",
+      "description": "Calendar events for your courses."
+    },
+    {
+      "name": "grade_summary",
+      "description": "Whole-course grades: weights, drop rules and your current scores."
+    },
+    {
+      "name": "read_file",
+      "description": "Text of one course file you can open (PDF, Word, PowerPoint, HTML, plain text). Nothing is saved."
+    },
+    {
+      "name": "assignment_feedback",
+      "description": "Your scores, rubric scores and instructor/TA comments per assignment, on your own submissions."
+    },
+    {
+      "name": "canvas_todo_items",
+      "description": "Your Canvas To Do list with due dates."
+    }
+  ],
+  "tools_generated": false,
+  "keywords": [
+    "canvas",
+    "lms",
+    "school",
+    "assignments",
+    "read-only"
+  ],
+  "license": "MIT",
+  "compatibility": {
+    "platforms": [
+      "darwin",
+      "win32"
+    ],
+    "runtimes": {
+      "node": ">=18.0.0"
+    }
+  },
+  "user_config": {
+    "canvas_token": {
+      "type": "string",
+      "title": "Canvas API token",
+      "description": "Create it in Canvas: Account > Settings > Approved Integrations > + New Access Token. Give it a purpose, set an expiry date (e.g. end of term), then copy it here. Canvas shows it only once.",
+      "sensitive": true,
+      "required": true
+    },
+    "canvas_base_url": {
+      "type": "string",
+      "title": "Canvas URL (optional)",
+      "description": "Your school's Canvas web address, like https://yourschool.instructure.com.",
+      "default": "https://llu.instructure.com",
+      "required": false
+    }
+  },
+  "privacy_policies": [
+    "https://www.instructure.com/policies/privacy"
+  ]
+}

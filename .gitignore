@@ -1,0 +1,7 @@
+node_modules/
+*.mcpb
+*.zip
+.env*
+*.log
+.DS_Store
+.canvas-pii-*

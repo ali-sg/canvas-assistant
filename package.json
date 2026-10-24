@@ -1,0 +1,29 @@
+{
+  "name": "canvas-readonly-mcp",
+  "version": "0.4.4",
+  "description": "Read-only Canvas LMS MCP server (Node, stdio). Only HTTP GET is ever issued to Canvas.",
+  "type": "module",
+  "main": "server/index.js",
+  "private": true,
+  "license": "MIT",
+  "author": {
+    "name": "ali-sg",
+    "url": "https://github.com/ali-sg"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ali-sg/canvas-assistant.git"
+  },
+  "homepage": "https://github.com/ali-sg/canvas-assistant#readme",
+  "bugs": {
+    "url": "https://github.com/ali-sg/canvas-assistant/issues"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "1.32.1",
+    "unpdf": "1.4.0",
+    "zod": "3.25.76"
+  }
+}
