@@ -52,6 +52,20 @@ Dates use the time zone in your Canvas profile, which you can change under **Acc
 
 To catch changes, Canvas Assistant keeps a small file of your course dates and grades in a hidden **.canvas-mcp** folder on your computer. Deleting that folder resets the check-ins.
 
+## What it can look up
+- **Your courses:** the classes you're enrolled in this term.
+- **What's coming up:** work you haven't turned in yet that's due soon, plus anything overdue.
+- **Canvas To Do list:** what Canvas itself says needs your attention.
+- **Work with no due date:** assignments that don't have a date yet, sorted by module week.
+- **Course details:** a course's assignments, quizzes, discussions, pages, modules, syllabus and announcements in one place.
+- **Feedback:** your scores, rubric scores and instructor comments on your work.
+- **Read a file:** the text of a PDF, Word or PowerPoint file in a course.
+- **What changed:** anything new, changed or removed since your last check-in.
+- **Announcements:** your courses' announcements.
+- **Calendar:** events on your Canvas calendar.
+- **Course page:** the text of one page in a course.
+- **Grades:** your current grade in each course, and how it's weighted.
+
 ## Using a to-do app (optional)
 You don't need one. If you use one, connect it to Claude and tell Claude which list to use. Claude can add new work and update changed due dates for you. It never checks anything off on its own, and it asks before deleting anything.
 
